@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<!--[if IEMobile 7 ]><html class="no-js iem7" manifest="default.appcache?v=1"><![endif]-->
+<!--[if lt IE 7 ]><html class="no-js ie6" lang="en"><![endif]-->
+<!--[if IE 7 ]><html class="no-js ie7" lang="en"><![endif]-->
+<!--[if IE 8 ]><html class="no-js ie8" lang="en"><![endif]-->
+<!--[if (gte IE 9)|(gt IEMobile 7)|!(IEMobile)|!(IE)]><!--><html class="no-js" manifest="default.appcache?v=1" lang="en"><!--<![endif]-->
+
+<head>
+<meta charset="utf-8">
+
+<title>_blank Boilerplate</title>
+<meta name="description" content="">
+<meta name="author" content="">
+
+
+<!-- http://t.co/dKP3o1e -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1">
+
+
+
+<!-- For all browsers -->
+<link rel="stylesheet" media="screen" href="css/global.css?v=1">
+<link rel="stylesheet" media="print" href="css/print.css?v=1">
+
+<!-- For progressively larger displays -->
+<link rel="stylesheet" media="only screen and (min-width: 768px)" href="css/768.css?v=1">
+<link rel="stylesheet" media="only screen and (min-width: 992px)" href="css/992.css?v=1">
+
+
+
+<!-- JavaScript at bottom except for Modernizr -->
+<script src="js/lib/modernizr-2.0.3.custom.min.js"></script>
+
+
+
+<!-- For iPhone 4 -->
+<link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/spacer.gif">
+<!-- For iPad 1-->
+<link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/spacer.gif">
+<!-- For iPhone 3G, iPod Touch and Android -->
+<link rel="apple-touch-icon-precomposed" href="img/spacer.gif">
+<!-- For Nokia -->
+<link rel="shortcut icon" href="img/spacer.gif">
+<!-- For everything else -->
+<link rel="shortcut icon" href="img/icon.ico">
+
+
+<!--iOS. Delete if not required -->
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="apple-touch-startup-image" href="img/splash.png">
+
+
+<!--Microsoft. Delete if not required -->
+<meta http-equiv="cleartype" content="on">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+
+</head>
+
+<body>
+	
+
+
+
+	<div class="container">
+		
+
+		<h1>Fancy Select</h1>
+		<p>Works by hiding the select and inserting a [ul] after it.  It then attached functionality to that [ul] that makes it behave like a select.  When the user makes a choice on the new [ul] the value of the select is updated and then the change event fired on that select.</p>
+
+		<select name="" id="date-range" title="Select a Date Range">
+			<option value="one">Past 30 days</option>
+			<option value="two">Today</option>
+			<option value="three">Yesterday</option>
+			<option value="four">Last Week</option>
+			<option value="five">Last fortnight</option>
+			<option value="six">Past 30 days</option>
+		</select>
+		
+		
+	</div>	
+		
+
+
+
+<!-- JQuery -->
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
+<script> window.jQuery || document.write('<script src="js/lib/jquery-1.6.1.min.js">\x3C/script>') </script>
+<script src="js/styleSelect.jquery.js"></script>
+
+<!-- Other JS -->
+<script src="js/application.js"></script>
+
+<script>
+	
+	$(document).ready( function() {
+		
+		$('#date-range, #date-range-2').styleSelect()
+		
+		
+	})
+	
+</script>
+
+
+<!--[if (lt IE 9) & (!IEMobile)]>
+<script src="js/lib/selectivizr.min.js"></script>
+<![endif]-->
+
+<noscript>This site requires Javascript</noscript>
+</body>
+</html>
