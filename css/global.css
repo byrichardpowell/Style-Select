@@ -147,6 +147,11 @@ p {
 .left {
   padding-right: 5%;
 }
+li {
+  font-size: 14px;
+  line-height: 20px;
+  list-style-type: none;
+}
 /* Styled select */
 .style-select {
   cursor: pointer;
