@@ -62,17 +62,11 @@
 					var val = selectItems[i].val,
 					
 					// Create the <li>
-						$item = $list.append('<li data-val="' + val + '">' + selectItems[i].text +'</li>');
+						$item = $list.append('<li data-val="' + val + '"><span class="pad">' + selectItems[i].text +'</span></li>');
 					// Insert this <li> as the last <li> inside the <ul>
-						$item = $list.children(':last')
+						$item = $list.children(':last');
 
-					// If this items val is the default val add the active class
-					if (val === defaultVal) {
-						$item.addClass('active');
-						activeApplied = true;
-					} else {
-						$item.hide();
-					}	
+
 
 
 
@@ -83,10 +77,23 @@
 					$item.click( function() {
 
 						// The val of the clicked item
-						var val = $(this).data('val');
+						var val = $(this).data('val'),
+							i = 500;
+						
+						// Make Sure it appears over every other element
+						// Increment the Z-Index of each list item in order
+						$list.find('li').each( function() {
+							
+							$(this).css('zIndex', i);
+							i++;
+							
+						});
+						// Lastly apply a z-index Vlaue to the icon
+						$list.find('.icon').css('zIndex', i);
+						
 
 						// They clicked on the active one 
-						if (val === $select.val()) {
+						if (val == $select.val()) {
 
 
 							if ($list.hasClass('is-closed')) {
@@ -136,8 +143,19 @@
 					})
 				}	
 
+				
 
-				$list.append("<span class='icon'></span>");
+				// Fix the Width of the List
+				// Do this so that the width doesnt pop when we show/hide the inactive items
+				// Also Add the .icon span to the end of the<li>
+				// Use this icon to style the up down arrow
+				$list.width($list.width()).append("<span class='icon'></span>");
+
+				// Find the default Item
+				// Add the active Class
+				// Hide the rest of the items
+				$list.find('li[data-val=' + defaultVal + ']').addClass('active').siblings('li').hide();
+
 
 
 

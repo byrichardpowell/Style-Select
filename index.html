@@ -68,20 +68,54 @@
 
 	<div class="container">
 		
+		<article class="clm left">
+			
+			<h1>Fancy Select</h1>
+			<p>Fancy select aims to provide complete control over select box styling.  Since Select Box's are native OS, the styling options are (understandably) limited</p>
 
-		<h1>Fancy Select</h1>
-		<p>Works by hiding the select and inserting a [ul] after it.  It then attached functionality to that [ul] that makes it behave like a select.  When the user makes a choice on the new [ul] the value of the select is updated and then the change event fired on that select.</p>
+			<h2>How does it work?</h2>
+			<p>Fancy Select works by hiding the native select and inserting an unordered list after it.  The unordered list has most of the functionality f a native select, but is completely stylable. You can style the new select in the external stylesheet</p>
 
-		<select name="" id="date-range" title="Select a Date Range">
-			<option value="one">Past 30 days</option>
-			<option value="two">Today</option>
-			<option value="three">Yesterday</option>
-			<option value="four">Last Week</option>
-			<option value="five">Last fortnight</option>
-			<option value="six">Past 30 days</option>
-		</select>
+			<h2>Features?</h2>
+			<p>Not many. Not all of the functionality of a standard select is transferred across and theres very little configuration options. I've built this precisely to my needs, so if i didnt need a feature, I didnt build it.</p>
+
+			<h2>Events?</h2>
+			<p>You can attach event listeners to the select as per usual.</p>
+
+			<h2>Questions?</h2>
+			<p><a href="mailto:richardo@gmail.com">email me</a></p>
+			
+			
+		</div>
 		
+		<aside class="clm">
+			
+			<h1>Demo</h1>
+			<p>$('select').styleSelect()</p>
+			
+			
+			<select name="" id="date-range" title="Select a Date Range">
+				<option value="one">Past 30 days</option>
+				<option value="two">Today</option>
+				<option value="three">Yesterday</option>
+				<option value="four">Last Week</option>
+				<option value="five">Last fortnight</option>
+				<option value="six">Past 30 days</option>
+			</select>
+			
+			<select name="" id="date-range" title="Select a Date Range">
+				<option value="one">Dave</option>
+				<option value="two">Edward</option>
+				<option value="three">Francis</option>
+				<option value="four">Gavin</option>
+				<option value="five">Harry</option>
+				<option value="six">Ian</option>
+			</select>
+			
+		</aside>
 		
+
+
 	</div>	
 		
 
@@ -90,15 +124,18 @@
 <!-- JQuery -->
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.min.js"></script>
 <script> window.jQuery || document.write('<script src="js/lib/jquery-1.6.1.min.js">\x3C/script>') </script>
+
+
+<!-- Include the StyleSelect File -->
 <script src="js/styleSelect.jquery.js"></script>
 
-<!-- Other JS -->
-<script src="js/application.js"></script>
 
 <script>
 	
 	$(document).ready( function() {
-		
+	
+	
+		// Then call styleSelect on a select
 		$('#date-range, #date-range-2').styleSelect()
 		
 		
